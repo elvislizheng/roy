@@ -255,7 +255,17 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span>© {new Date().getFullYear()} Roy Li</span>
-        <span>Last updated May 2026</span>
+        <span>
+          Background:{" "}
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Toronto_University_College_1.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            University College, U of T
+          </a>{" "}
+          (CC BY-SA 4.0)
+        </span>
       </footer>
     </div>
   );
