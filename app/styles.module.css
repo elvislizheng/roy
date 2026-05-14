@@ -44,10 +44,17 @@
 
 .nav a {
   transition: color 120ms ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
 }
 
 .nav a:hover {
   color: var(--accent);
+}
+
+.navActive {
+  color: var(--foreground) !important;
+  border-bottom-color: var(--accent) !important;
 }
 
 /* ---------- Main ---------- */
@@ -392,6 +399,173 @@
   font-size: 13px;
   color: var(--muted);
   font-style: italic;
+}
+
+/* ---------- Resume ---------- */
+
+.resumeIntro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.resumeContact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13.5px;
+  color: var(--foreground);
+  list-style: none;
+}
+
+.resumeContact a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.resumeContact a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.resumeContact li + li::before {
+  content: "·";
+  color: var(--muted);
+  padding-right: 16px;
+}
+
+.resumeDownload {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 12px;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.resumeDownload:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+.resumeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 8px;
+}
+
+.resumeBlockTitle {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.resumeList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.resumeItem {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px dotted var(--border);
+  align-items: baseline;
+}
+
+.resumeItem:last-child {
+  border-bottom: none;
+}
+
+.resumePeriod {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--muted);
+  padding-top: 2px;
+}
+
+.resumeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resumeTitle {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+
+.resumeInstitution {
+  font-size: 14.5px;
+  color: var(--foreground);
+  font-style: italic;
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.resumeDetail {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.resumeBullets {
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--foreground);
+  line-height: 1.55;
+}
+
+.resumeBullets li::marker {
+  color: var(--muted);
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.skillItem {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12.5px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  .skillItem {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+@media (max-width: 720px) {
+  .resumeItem {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
 }
 
 /* ---------- Contact ---------- */
